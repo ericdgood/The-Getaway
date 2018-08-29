@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">The Getaway</string>
+    <string name="place_name_enter">Place Name</string>
+    <string name="place_address_input">Place Address</string>
+    <string name="start_time_input">Start Time</string>
+    <string name="end_time_input">End Time</string>
+    <string name="checklist_inout">CheckList</string>
+    <string name="save">Save</string>
+</resources>
