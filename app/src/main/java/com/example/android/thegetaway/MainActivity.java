@@ -24,9 +24,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
-
     }
 }
