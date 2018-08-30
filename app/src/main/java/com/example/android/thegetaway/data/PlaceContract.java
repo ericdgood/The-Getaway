@@ -32,8 +32,9 @@ public final class PlaceContract {
 
         public final static String COLUMN_START_TIME = "start";
 
-        public final static String COLUMN_END_TIME = "end";
+        public final static String COLUMN_END_TIME = "endt";
 
+        public final static String COLUMN_CHECKLIST = "checklist";
 
     }
 

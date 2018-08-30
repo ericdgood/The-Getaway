@@ -50,6 +50,7 @@
     </LinearLayout>
 
     <EditText
+        android:id="@+id/checklist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/edit_field"

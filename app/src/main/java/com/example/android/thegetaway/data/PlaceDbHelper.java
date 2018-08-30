@@ -8,7 +8,7 @@ import java.sql.SQLDataException;
 
 public class PlaceDbHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "places.db";
+    private static final String DATABASE_NAME = "trip.db";
 
     private static final int DATABASE_VERSION = 1;
 
@@ -19,12 +19,13 @@ public class PlaceDbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String SQL_CREATE_PLACE_TABLE = "CREATE TABLE " + PlaceContract.PlaceEntry.TABLE_NAME + "("
+        String SQL_CREATE_PLACE_TABLE =  "CREATE TABLE " + PlaceContract.PlaceEntry.TABLE_NAME + " ("
                 + PlaceContract.PlaceEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + PlaceContract.PlaceEntry.COLUMN_PLACE_NAME +" TEXT NOT NULL, "
-                + PlaceContract.PlaceEntry.COLUMN_PLACE_LOCATION + "TEXT NOT NULL, "
-                + PlaceContract.PlaceEntry.COLUMN_START_TIME + "INT NOT NULL, "
-                + PlaceContract.PlaceEntry.COLUMN_END_TIME + "INT NOT NULL, ";
+                + PlaceContract.PlaceEntry.COLUMN_PLACE_NAME + " TEXT NOT NULL, "
+                + PlaceContract.PlaceEntry.COLUMN_PLACE_LOCATION + " TEXT NOT NULL, "
+                + PlaceContract.PlaceEntry.COLUMN_START_TIME + " INTEGER NOT NULL, "
+                + PlaceContract.PlaceEntry.COLUMN_END_TIME + " INTEGER NOT NULL, "
+                + PlaceContract.PlaceEntry.COLUMN_CHECKLIST + " TEXT );";
 
         db.execSQL(SQL_CREATE_PLACE_TABLE);
 
