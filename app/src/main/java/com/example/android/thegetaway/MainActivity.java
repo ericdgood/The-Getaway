@@ -7,18 +7,12 @@ import android.content.CursorLoader;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.android.thegetaway.data.PlaceContract.PlaceEntry;
 
@@ -49,15 +43,15 @@ public class MainActivity extends AppCompatActivity implements
         mCursorAdapter = new PlaceCursorAdapter(this, null);
         bookListView.setAdapter(mCursorAdapter);
 
-//        bookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-//                Intent intent = new Intent(MainActivity.this, ViewActivity.class);
-//                Uri currentbookUri = ContentUris.withAppendedId(PlaceEntry.CONTENT_URI, id);
-//                intent.setData(currentbookUri);
-//                startActivity(intent);
-//            }
-//        });
+        bookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, DetailView.class);
+                Uri currentbookUri = ContentUris.withAppendedId(PlaceEntry.CONTENT_URI, id);
+                intent.setData(currentbookUri);
+                startActivity(intent);
+            }
+        });
         getLoaderManager().initLoader(BOOK_LOADER, null, this);
     }
 

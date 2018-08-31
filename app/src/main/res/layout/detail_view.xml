@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/place_detail_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/hood" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/place_name_detail"
+            style="@style/detail_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            tools:text="Burnt Lake Trail" />
+
+        <TextView
+            android:id="@+id/place_location_detail"
+            style="@style/detail_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:textSize="18sp"
+            tools:text="7802 richwood dr orlando fl 32825" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:inputType="time"
+                android:id="@+id/start_time_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="8:00"
+                style="@style/detail_field"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/end_time_detail"
+                android:inputType="time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="12:00"
+                style="@style/detail_field"
+                android:layout_marginRight="20dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/checklist_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/detail_field"
+            android:gravity="left"
+            tools:text="defe
+fewfw
+fewfew"/>
+
+        <Button
+            android:id="@+id/delete_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete"/>
+
+    </LinearLayout>
+</RelativeLayout>
