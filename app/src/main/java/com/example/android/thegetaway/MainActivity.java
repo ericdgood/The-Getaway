@@ -30,12 +30,9 @@ public class MainActivity extends AppCompatActivity implements
 
         // Setup FAB to open EditorActivity
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AddPlace.class);
-                startActivity(intent);
-            }
+        fab.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, AddPlace.class);
+            startActivity(intent);
         });
 
         ListView bookListView = (ListView) findViewById(R.id.list);

@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.android.thegetaway.data.PlaceContract.PlaceEntry;
@@ -51,6 +52,9 @@ public class AddPlace extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_edit_place);
+
+        ImageButton btn_choose_photo = (ImageButton) findViewById(R.id.place_image_input); // Replace with id of your button.
+        btn_choose_photo.setOnClickListener(btnChoosePhotoPressed);
 
         Intent intent = getIntent();
         mCurrentPlaceUri = intent.getData();
@@ -167,6 +171,16 @@ public class AddPlace extends AppCompatActivity implements
             }
         }
     }
+
+    public View.OnClickListener btnChoosePhotoPressed = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent(Intent.ACTION_PICK,
+                    android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+            final int ACTIVITY_SELECT_IMAGE = 1234;
+            startActivityForResult(i, ACTIVITY_SELECT_IMAGE);
+        }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
